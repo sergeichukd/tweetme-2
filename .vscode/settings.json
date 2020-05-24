@@ -2,4 +2,5 @@
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django"
         ],
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
 }
