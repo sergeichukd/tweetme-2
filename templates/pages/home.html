@@ -5,12 +5,16 @@ this is amazing!!!
 {%endblock head_title%}
 
 {% block content %}
-Wellcome to Tweetme 2!
+<div class='row text-center'>
+    <div class='col'>
+        <h1>Wellcome to Tweetme 2!</h1>
+    </div>
+</div>
 
-
-<div id="tweets"> 
+<div class='row' id='tweets'> 
     Loading...
 </div>
+
 
 <script>
 const tweetsElement = document.getElementById("tweets") // get an html element
@@ -28,7 +32,7 @@ const responseType = "json"
 function handleDidLike (tweet_id, currentCount) {
     console.log(tweet_id, currentCount)
     currentCount++
-    return
+    return 
 }
 
 function LikeBtn(tweet) {
@@ -37,10 +41,7 @@ function LikeBtn(tweet) {
 
 function formatTweetElement(tweet) {
 
-    var formattedTweet = `<div class='mb-4' id='tweet-${tweet.id}'>
-    <p>${tweet.content}</p> 
-    <div class='btn-group'>${LikeBtn(tweet)}</div>
-    <div>`
+    var formattedTweet = `<div class='col-12 col-mb-10 mx-auto border rounded py-3 mb-4' id='tweet-${tweet.id}'><p>${tweet.content}</p><div class='btn-group'>${LikeBtn(tweet)}</div></div>`
     return formattedTweet
 }
 xhr.responseType = responseType
